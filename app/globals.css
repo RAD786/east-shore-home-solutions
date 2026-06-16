@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #0f2a3f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-sand-100 text-navy antialiased;
+  /* Leave room for the sticky mobile call bar */
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 4.5rem;
+  }
+}
+
+/* Consistent focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  @apply outline-none ring-2 ring-seafoam-500/60 ring-offset-2 ring-offset-white;
+}
+
+/* Utility container */
+.container-page {
+  @apply mx-auto max-w-container px-4 sm:px-6;
+}
+
+/* Prose-ish helper for body copy blocks */
+.copy p {
+  @apply mb-4 leading-relaxed text-navy/75;
+}

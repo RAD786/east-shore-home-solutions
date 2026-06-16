@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(npm install --no-fund --no-audit 2>&1)",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(npm install next@^14.2.33 eslint-config-next@^14.2.33 --no-fund --no-audit 2>&1)",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 40; Write-Output \"=== EXIT $LASTEXITCODE ===\")"
+    ]
+  }
+}
