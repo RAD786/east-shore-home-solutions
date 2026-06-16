@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
-import ServiceCard from "@/components/ServiceCard";
+import ServiceCard, { ServiceIconGlyph } from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
 import {
   getService,
@@ -14,8 +15,7 @@ import {
   services,
   TRADE_LIMITATION_NOTICE,
 } from "@/lib/services";
-import { cityPages } from "@/lib/siteConfig";
-import { siteConfig } from "@/lib/siteConfig";
+import { cityPages, siteConfig } from "@/lib/siteConfig";
 import { buildMetadata } from "@/lib/seo";
 import { serviceSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 
@@ -32,7 +32,9 @@ export function generateMetadata({ params }: Params): Metadata {
     title: service.metaTitle,
     description: service.metaDescription,
     path: `/services/${service.slug}`,
-    image: service.image,
+    // Use the real service photo for OG when one exists; otherwise the
+    // branded default OG image is used.
+    image: service.hasPhoto ? service.image : undefined,
     keywords: service.primaryKeywords,
   });
 }
@@ -77,16 +79,32 @@ export default function ServicePage({ params }: Params) {
           <div className="grid gap-12 lg:grid-cols-[1fr_400px]">
             {/* Main content */}
             <div>
-              {/* Placeholder image */}
-              <div className="flex aspect-[16/9] items-center justify-center rounded-2xl border border-navy/10 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 text-center text-white shadow-card">
-                <div className="px-6">
-                  <p className="text-xs font-medium uppercase tracking-wider text-seafoam-100">
-                    Placeholder image
-                  </p>
-                  <p className="mt-1 text-lg font-semibold">{service.title}</p>
-                  <p className="text-sm text-white/70">{service.image}</p>
+              {service.hasPhoto ? (
+                /* Real service photo */
+                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-navy/10 shadow-card">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} by ${siteConfig.businessName} in ${siteConfig.regionShort}, NJ`}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 760px, 100vw"
+                    className="object-cover"
+                  />
                 </div>
-              </div>
+              ) : (
+                /* Branded visual panel (swap for a real photo when available) */
+                <div className="flex aspect-[16/9] items-center justify-center rounded-2xl border border-navy/10 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 text-center text-white shadow-card">
+                  <div className="px-6">
+                    <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
+                      <ServiceIconGlyph icon={service.icon} />
+                    </span>
+                    <p className="mt-3 text-lg font-semibold">{service.title}</p>
+                    <p className="mt-1 text-sm text-seafoam-100">
+                      {siteConfig.regionShort}, NJ
+                    </p>
+                  </div>
+                </div>
+              )}
 
               <div className="copy mt-8">
                 <h2 className="text-2xl font-bold text-navy">

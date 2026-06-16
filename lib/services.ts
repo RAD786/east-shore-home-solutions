@@ -31,8 +31,10 @@ export type Service = {
   longDescription: string;
   /** Lucide-style icon key (rendered as inline SVG in ServiceCard) */
   icon: ServiceIcon;
-  /** Placeholder image reference */
+  /** Image reference (see public/images/services/) */
   image: string;
+  /** true once a real photo exists at `image` (renders it instead of the panel) */
+  hasPhoto?: boolean;
   /** Primary SEO keywords this page targets */
   primaryKeywords: string[];
   /** Bullet list of what's included */
@@ -80,7 +82,8 @@ export const services: Service[] = [
     longDescription:
       "From doorknob holes to water-stained ceilings, our drywall repair in Ocean County, NJ delivers smooth, paint-ready walls. We patch, tape, sand, and texture-match so repairs disappear into the surrounding surface.",
     icon: "drywall",
-    image: "/images/services/drywall-repair.jpg",
+    image: "/images/services/drywall-repair.png",
+    hasPhoto: true,
     primaryKeywords: [
       "drywall repair Ocean County NJ",
       "drywall patch repair Ocean County NJ",
@@ -136,7 +139,8 @@ export const services: Service[] = [
     longDescription:
       "Professional TV mounting across Ocean County, NJ. We anchor your TV safely to studs or masonry, level it perfectly, and hide the wires for a clean, finished look — including tricky fireplace and corner installs.",
     icon: "tv",
-    image: "/images/services/tv-mounting.jpg",
+    image: "/images/services/tv-mounting.png",
+    hasPhoto: true,
     primaryKeywords: [
       "TV mounting Ocean County NJ",
       "TV wall mounting Ocean County NJ",
@@ -193,7 +197,8 @@ export const services: Service[] = [
     longDescription:
       "Sticking, sagging, or drafty doors? We repair and install interior and exterior doors throughout Ocean County, NJ — adjusting, replacing hardware, repairing frames, and hanging new slabs and pre-hung units.",
     icon: "door",
-    image: "/images/services/door-repair.jpg",
+    image: "/images/services/door-repair.png",
+    hasPhoto: true,
     primaryKeywords: [
       "door repair Ocean County NJ",
       "door installation Ocean County NJ",
@@ -248,7 +253,8 @@ export const services: Service[] = [
     longDescription:
       "Shore weather is tough on decks and fences. We repair wood decks and fences across Ocean County, NJ — replacing rotted boards, securing loose railings, and fixing sagging gates so your outdoor spaces stay safe and looking sharp.",
     icon: "deck",
-    image: "/images/services/deck-fence-repair.jpg",
+    image: "/images/services/deck-fence-repair.png",
+    hasPhoto: true,
     primaryKeywords: [
       "deck repair Ocean County NJ",
       "deck board replacement Ocean County NJ",
@@ -306,7 +312,8 @@ export const services: Service[] = [
     longDescription:
       "One trusted handyman for your entire portfolio. We help Ocean County, NJ landlords, realtors, and Airbnb hosts keep properties guest-ready with fast turnover repairs, punch lists, and ongoing maintenance — with reliable communication you can count on.",
     icon: "rental",
-    image: "/images/services/rental-maintenance.jpg",
+    image: "/images/services/rental-maintenance.png",
+    hasPhoto: true,
     primaryKeywords: [
       "rental property maintenance Ocean County NJ",
       "landlord repair services Ocean County NJ",
@@ -361,7 +368,8 @@ export const services: Service[] = [
     longDescription:
       "Upgrade your lighting and comfort with professional ceiling fan and light fixture installation in Ocean County, NJ. We replace existing fans and fixtures using your home's current wiring and boxes, balanced and securely mounted.",
     icon: "fan",
-    image: "/images/services/ceiling-fan.jpg",
+    image: "/images/services/ceiling-fan-appliance-installation.png",
+    hasPhoto: true,
     primaryKeywords: [
       "ceiling fan installation Ocean County NJ",
       "ceiling fan replacement Ocean County NJ",
@@ -418,7 +426,8 @@ export const services: Service[] = [
     longDescription:
       "Drips, runs, and clogs add up. We handle minor plumbing repairs across Ocean County, NJ — faucet and fixture replacement, toilet repairs, and garbage disposal swaps. For fixture-level work that keeps your home running smoothly.",
     icon: "plumbing",
-    image: "/images/services/minor-plumbing.jpg",
+    image: "/images/services/minor-plumbing.png",
+    hasPhoto: true,
     primaryKeywords: [
       "minor plumbing repairs Ocean County NJ",
       "faucet replacement Ocean County NJ",
@@ -475,7 +484,8 @@ export const services: Service[] = [
     longDescription:
       "Help loved ones stay safe at home. We install grab bars and handrails throughout Ocean County, NJ — anchored into studs or backed with proper hardware so they hold real weight in bathrooms, hallways, and on stairs.",
     icon: "grabbar",
-    image: "/images/services/grab-bar.jpg",
+    image: "/images/services/grab-bar-handrail-installation.png",
+    hasPhoto: true,
     primaryKeywords: [
       "grab bar installation Ocean County NJ",
       "handrail installation Ocean County NJ",
@@ -529,7 +539,8 @@ export const services: Service[] = [
     longDescription:
       "Sharp trim makes a room. We provide interior trim and finish carpentry across Ocean County, NJ — baseboards, crown molding, casing, and detail work installed with tight, clean joints and a paint-ready finish.",
     icon: "trim",
-    image: "/images/services/trim-carpentry.jpg",
+    image: "/images/services/trim-carpentry.png",
+    hasPhoto: true,
     primaryKeywords: [
       "trim installation Ocean County NJ",
       "baseboard installation Ocean County NJ",
@@ -583,7 +594,8 @@ export const services: Service[] = [
     longDescription:
       "Knock out the whole to-do list with one reliable, local handyman. We handle general home maintenance and basic repairs across Ocean County, NJ — from furniture assembly and gutter cleaning to seasonal upkeep and the small fixes that pile up.",
     icon: "maintenance",
-    image: "/images/services/home-maintenance.jpg",
+    image: "/images/services/home-maintenance.png",
+    hasPhoto: true,
     primaryKeywords: [
       "home maintenance Ocean County NJ",
       "property maintenance Ocean County NJ",

@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact & Free Estimate",
+  title: "Contact Us — Free Handyman Estimate in Ocean County, NJ",
   description:
     "Request a free, same-day handyman estimate in Ocean County, NJ. Call East Shore Home Solutions or send a quick request with photos — we'll get right back to you.",
   path: "/contact",

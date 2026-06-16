@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run build 2>&1 | Select-Object -Last 5; Write-Output \"=== EXIT $LASTEXITCODE ===\")",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 30; Write-Output \"=== TSC EXIT $LASTEXITCODE ===\")",
+      "PowerShell(npx next lint 2>&1 | Select-Object -First 40; Write-Output \"=== LINT EXIT $LASTEXITCODE ===\")",
+      "PowerShell(npx next lint 2>&1 | Select-Object -Last 3; npx tsc --noEmit; Write-Output \"=== TSC EXIT $LASTEXITCODE ===\")",
+      "PowerShell($dir = \"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\services\"; if \\(-not \\(Test-Path $dir\\)\\) { New-Item -ItemType Directory -Path $dir | Out-Null }; Move-Item \"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\drywall-repair.png\" \"$dir\\\\drywall-repair.png\" -Force; Get-ChildItem $dir | Select-Object Name, Length)",
+      "PowerShell(npm run build 2>&1 | Select-Object -Last 6; Write-Output \"=== EXIT $LASTEXITCODE ===\")",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\services\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB\\)}})"
+    ]
+  }
+}

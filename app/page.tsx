@@ -112,6 +112,7 @@ export default function HomePage() {
     <>
       {/* 1 ── Hero */}
       <Hero
+        image="/images/hero.png"
         eyebrow={`Locally owned • Serving all of ${siteConfig.regionShort}`}
         title="Handyman & Home Repair Services in Ocean County, NJ"
         subtitle="One local, insured handyman for the repairs and upkeep your home actually needs — done right, cleaned up, and communicated clearly. Homeowners, landlords, and shore-home owners across Ocean County count on us for honest work and same-day estimates."
@@ -313,14 +314,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Placeholder visual */}
+            {/* Branded visual panel (swap for a real photo when available) */}
             <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-navy/10 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 text-center text-white shadow-card">
               <div className="px-6">
                 <p className="text-sm font-medium uppercase tracking-wider text-seafoam-100">
-                  Placeholder image
+                  Landlords • Airbnb • Shore homes
                 </p>
-                <p className="mt-2 text-lg font-semibold">
-                  Shore & rental property upkeep
+                <p className="mt-2 text-2xl font-bold">
+                  One call keeps every property guest-ready
                 </p>
               </div>
             </div>

@@ -9,6 +9,12 @@ import { siteConfig } from "./siteConfig";
 
 const SITE_URL = siteConfig.url.replace(/\/$/, "");
 
+/**
+ * Site-wide default Open Graph / social share image.
+ * NOTE: path is case-sensitive on production (Linux). Keep it exact.
+ */
+export const OG_IMAGE = "/images/OG-share-branded.png";
+
 type BuildMetaArgs = {
   title: string;
   description: string;
@@ -27,7 +33,7 @@ export function buildMetadata({
   description,
   path = "/",
   titleOverride,
-  image = "/images/og-default.jpg",
+  image = OG_IMAGE,
   keywords = [],
   noIndex = false,
 }: BuildMetaArgs): Metadata {

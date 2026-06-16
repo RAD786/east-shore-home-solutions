@@ -19,7 +19,7 @@ will be used by `next/image` once wired):
   → `/images/services/<slug>.jpg`
 - Locations: `image` field in [lib/locations.ts](../lib/locations.ts)
   → `/images/locations/<slug>.jpg`
-- Default OG/share image: `/images/og-default.jpg`
+- Default OG/share image: `/images/OG-share-branded.png` (added)
 
 The full expected file list is in
 [public/images/README.md](../public/images/README.md).
@@ -58,8 +58,9 @@ temporary stock during development).
 - **Alt text:** always descriptive and local, e.g.
   "Drywall patch repair in Toms River, NJ." Never leave `alt` empty on
   meaningful images.
-- **OG image:** create a branded **1200×630** `og-default.jpg` before sharing
-  the site on social — it's referenced site-wide for link previews.
+- **OG image:** a branded share image is already in place at
+  `/images/OG-share-branded.png` (referenced site-wide for link previews via
+  `OG_IMAGE` in `lib/seo.ts`). Ideal OG dimensions are **1200×630**.
 
 ---
 

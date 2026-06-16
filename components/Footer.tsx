@@ -3,6 +3,7 @@
  * Reinforces local SEO with internal links to every key page.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, cityPages } from "@/lib/siteConfig";
 import { services } from "@/lib/services";
@@ -16,14 +17,16 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand + contact */}
           <div>
-            <div className="flex items-center gap-2">
-              <span
-                aria-hidden
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-sm font-bold text-navy"
-              >
-                ES
+            <div className="flex items-center">
+              <span className="inline-flex rounded-xl bg-white p-3 shadow-sm">
+                <Image
+                  src="/images/logo-2.png"
+                  alt={siteConfig.businessName}
+                  width={1536}
+                  height={524}
+                  className="h-10 w-auto sm:h-11"
+                />
               </span>
-              <span className="text-lg font-bold">East Shore Home Solutions</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               Trusted local handyman & home repair serving {siteConfig.region}.

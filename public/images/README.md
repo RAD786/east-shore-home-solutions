@@ -8,7 +8,7 @@ swap the gradient blocks for `next/image` when you have photography.
 ## Expected paths (referenced in `lib/services.ts` & `lib/locations.ts`)
 
 ### Branding / social
-- `og-default.jpg` — 1200×630 Open Graph share image
+- `OG-share-branded.png` — Open Graph / social share image (added; ideal 1200×630)
 
 ### Services (`/images/services/`)
 - `drywall-repair.jpg`

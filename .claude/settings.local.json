@@ -6,7 +6,11 @@
       "PowerShell(npm install --no-fund --no-audit 2>&1)",
       "PowerShell(npm run build 2>&1)",
       "PowerShell(npm install next@^14.2.33 eslint-config-next@^14.2.33 --no-fund --no-audit 2>&1)",
-      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 40; Write-Output \"=== EXIT $LASTEXITCODE ===\")"
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 40; Write-Output \"=== EXIT $LASTEXITCODE ===\")",
+      "PowerShell(npm run build 2>&1 | Select-Object -Last 6; Write-Output \"=== EXIT $LASTEXITCODE ===\")",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\logo-2.png\"\\); \"$\\($img.Width\\)x$\\($img.Height\\) ratio=$\\([math]::Round\\($img.Width/$img.Height,2\\)\\)\"; $img.Dispose\\(\\))",
+      "PowerShell(npm run build 2>&1 | Select-Object -Last 5; Write-Output \"=== EXIT $LASTEXITCODE ===\")",
+      "PowerShell($p=\"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\logo-navbar-transparent.png\"; if\\(Test-Path $p\\){Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile\\($p\\); \"$\\($img.Width\\)x$\\($img.Height\\) ratio=$\\([math]::Round\\($img.Width/$img.Height,2\\)\\)\"; $img.Dispose\\(\\)} else {\"NOT FOUND\"})"
     ]
   }
 }

@@ -27,7 +27,8 @@ export function generateMetadata({ params }: Params): Metadata {
     title: location.metaTitle,
     description: location.metaDescription,
     path: `/service-areas/${location.slug}`,
-    image: location.image,
+    // Falls back to the branded OG image. Once a real photo exists at
+    // location.image, pass `image: location.image` here.
     keywords: location.targetKeywords,
   });
 }

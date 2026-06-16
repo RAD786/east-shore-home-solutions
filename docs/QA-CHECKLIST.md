@@ -56,7 +56,7 @@ and a desktop browser.
 - [ ] View source on a service & city page → JSON-LD present
       (LocalBusiness, Service/LocalBusiness, FAQPage, BreadcrumbList)
 - [ ] `NEXT_PUBLIC_SITE_URL` is set so canonical URLs are correct
-- [ ] OG image exists at `/images/og-default.jpg` (see IMAGES.md) before sharing
+- [x] OG image exists at `/images/OG-share-branded.png` (see IMAGES.md)
 
 ## Content accuracy
 

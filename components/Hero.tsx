@@ -3,6 +3,7 @@
  * inner pages. Coastal gradient background + dual CTAs.
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -14,6 +15,8 @@ type Props = {
   showCtas?: boolean;
   /** Compact variant for inner pages */
   compact?: boolean;
+  /** Optional background photo (e.g. "/images/hero.png" on the homepage). */
+  image?: string;
   children?: React.ReactNode;
 };
 
@@ -23,6 +26,7 @@ export default function Hero({
   subtitle,
   showCtas = true,
   compact = false,
+  image,
   children,
 }: Props) {
   return (
@@ -31,15 +35,42 @@ export default function Hero({
         compact ? "py-14 sm:py-16" : "py-20 sm:py-28"
       }`}
     >
-      {/* Decorative coastal gradient + wave */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 opacity-95"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-seafoam-500/20 blur-3xl"
-      />
+      {image ? (
+        <>
+          {/* Background photo */}
+          <Image
+            src={image}
+            alt=""
+            aria-hidden
+            fill
+            priority
+            sizes="100vw"
+            className="pointer-events-none object-cover"
+          />
+          {/* Navy scrim for text legibility (stronger on the left) */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/55"
+          />
+          {/* Subtle brand tint */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-seafoam-700/40"
+          />
+        </>
+      ) : (
+        /* Brand gradient (no photo) — used on inner pages */
+        <>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 opacity-95"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-seafoam-500/20 blur-3xl"
+          />
+        </>
+      )}
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-accent/20 blur-3xl"

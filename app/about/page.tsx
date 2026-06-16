@@ -94,14 +94,17 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Placeholder visual */}
+            {/* Branded visual panel (swap for a real photo when available) */}
             <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-navy/10 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 text-center text-white shadow-card">
               <div className="px-6">
                 <p className="text-sm font-medium uppercase tracking-wider text-seafoam-100">
-                  Placeholder image
+                  {siteConfig.region}
                 </p>
-                <p className="mt-2 text-lg font-semibold">
-                  The East Shore team at work
+                <p className="mt-2 text-2xl font-bold">
+                  Local, insured & here for the long haul
+                </p>
+                <p className="mt-2 text-sm text-white/75">
+                  Premium handyman work across the Jersey Shore.
                 </p>
               </div>
             </div>

@@ -5,6 +5,7 @@
  */
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -25,23 +26,18 @@ export default function Header() {
         {/* Logo / brand */}
         <Link
           href="/"
-          className="flex items-center gap-2"
+          className="flex items-center"
+          aria-label={`${siteConfig.businessName} — home`}
           onClick={() => setOpen(false)}
         >
-          <span
-            aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy text-sm font-bold text-white"
-          >
-            ES
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-base font-bold text-navy">
-              East Shore
-            </span>
-            <span className="text-[11px] font-medium uppercase tracking-wide text-seafoam-600">
-              Home Solutions
-            </span>
-          </span>
+          <Image
+            src="/images/logo-navbar-transparent.png"
+            alt={siteConfig.businessName}
+            width={1153}
+            height={372}
+            priority
+            className="h-11 w-auto sm:h-14"
+          />
         </Link>
 
         {/* Desktop nav */}

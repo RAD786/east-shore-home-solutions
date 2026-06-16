@@ -4,7 +4,7 @@
  */
 
 import { siteConfig } from "./siteConfig";
-import { SITE_URL } from "./seo";
+import { SITE_URL, OG_IMAGE } from "./seo";
 import type { Service } from "./services";
 import type { Location } from "./locations";
 
@@ -19,7 +19,7 @@ export function localBusinessSchema() {
     url: SITE_URL,
     telephone: siteConfig.phoneRaw,
     email: siteConfig.email,
-    image: `${SITE_URL}/images/og-default.jpg`,
+    image: `${SITE_URL}${OG_IMAGE}`,
     priceRange: "$$",
     areaServed: siteConfig.areaServed.map((name) => ({
       "@type": "City",
@@ -118,7 +118,7 @@ export function locationSchema(location: Location) {
     description: location.shortDescription,
     url: `${SITE_URL}/service-areas/${location.slug}`,
     telephone: siteConfig.phoneRaw,
-    image: `${SITE_URL}/images/og-default.jpg`,
+    image: `${SITE_URL}${OG_IMAGE}`,
     areaServed: {
       "@type": "City",
       name: location.cityName,

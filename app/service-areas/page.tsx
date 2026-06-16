@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Service Areas in Ocean County, NJ",
+  title: "Handyman Service Areas in Ocean County, NJ",
   description:
     "East Shore Home Solutions provides handyman and home repair services across Ocean County, NJ — Toms River, Brick, Lakewood, Jackson, Point Pleasant, Barnegat, Stafford/Manahawkin, LBI and more.",
   path: "/service-areas",
