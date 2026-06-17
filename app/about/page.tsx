@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrustBar from "@/components/TrustBar";
@@ -94,19 +95,15 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Branded visual panel (swap for a real photo when available) */}
-            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-navy/10 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 text-center text-white shadow-card">
-              <div className="px-6">
-                <p className="text-sm font-medium uppercase tracking-wider text-seafoam-100">
-                  {siteConfig.region}
-                </p>
-                <p className="mt-2 text-2xl font-bold">
-                  Local, insured & here for the long haul
-                </p>
-                <p className="mt-2 text-sm text-white/75">
-                  Premium handyman work across the Jersey Shore.
-                </p>
-              </div>
+            {/* About photo */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-navy/10 shadow-card">
+              <Image
+                src="/images/about-us.png"
+                alt={`${siteConfig.businessName} — local handyman work across ${siteConfig.region}`}
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
