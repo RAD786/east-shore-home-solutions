@@ -13,7 +13,8 @@
       "PowerShell($p=\"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\logo-navbar-transparent.png\"; if\\(Test-Path $p\\){Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile\\($p\\); \"$\\($img.Width\\)x$\\($img.Height\\) ratio=$\\([math]::Round\\($img.Width/$img.Height,2\\)\\)\"; $img.Dispose\\(\\)} else {\"NOT FOUND\"})",
       "PowerShell(cd \"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\"; \"=== .env.local in history? ===\"; git log --all --oneline -- .env.local; \"\\(empty above = never committed, good\\)\"; \"=== key string anywhere in tracked files? ===\"; git grep -n \"re_eD6rVu3P\" $\\(git rev-list --all\\) 2>$null | Select-Object -First 3; \"\\(empty above = key not in any commit, good\\)\")",
       "PowerShell($p=\"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\about-us.png\"; if\\(Test-Path $p\\){Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile\\($p\\); \"$\\($img.Width\\)x$\\($img.Height\\) ratio=$\\([math]::Round\\($img.Width/$img.Height,2\\)\\) | $\\([math]::Round\\(\\(Get-Item $p\\).Length/1KB\\)\\)KB\"; $img.Dispose\\(\\)} else {\"NOT FOUND\"})",
-      "PowerShell(cd \"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\"; npm run build 2>&1 | Select-Object -Last 5; Write-Output \"=== EXIT $LASTEXITCODE ===\")"
+      "PowerShell(cd \"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\"; npm run build 2>&1 | Select-Object -Last 5; Write-Output \"=== EXIT $LASTEXITCODE ===\")",
+      "PowerShell($p=\"c:\\\\Users\\\\ryana\\\\east-shore-home-solutions\\\\public\\\\images\\\\rental-shore-home-maintenance.png\"; if\\(Test-Path $p\\){Add-Type -AssemblyName System.Drawing; $img=[System.Drawing.Image]::FromFile\\($p\\); \"$\\($img.Width\\)x$\\($img.Height\\) ratio=$\\([math]::Round\\($img.Width/$img.Height,2\\)\\)\"; $img.Dispose\\(\\)} else {\"NOT FOUND\"})"
     ]
   }
 }

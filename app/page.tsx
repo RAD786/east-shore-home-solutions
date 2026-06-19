@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -314,16 +315,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Branded visual panel (swap for a real photo when available) */}
-            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-navy/10 bg-gradient-to-br from-navy via-navy-600 to-seafoam-700 text-center text-white shadow-card">
-              <div className="px-6">
-                <p className="text-sm font-medium uppercase tracking-wider text-seafoam-100">
-                  Landlords • Airbnb • Shore homes
-                </p>
-                <p className="mt-2 text-2xl font-bold">
-                  One call keeps every property guest-ready
-                </p>
-              </div>
+            {/* Rental & shore home photo */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-navy/10 shadow-card">
+              <Image
+                src="/images/rental-shore-home-maintenance.png"
+                alt={`Rental and shore home maintenance by ${siteConfig.businessName} in ${siteConfig.regionShort}, NJ`}
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
